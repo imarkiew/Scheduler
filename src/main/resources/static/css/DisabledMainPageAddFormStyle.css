@@ -1,0 +1,44 @@
+body 
+{
+   background-color: white;
+}
+
+.user_form
+{
+	float:left;
+    padding-left:1% 
+}
+
+.user_form .addForm 
+{
+	pointer-events: none;
+    opacity: 0.4;
+}
+
+.events_table
+{
+    float: left;
+    position: absolute;
+    left: 45%;
+    margin-top: 1%;
+}
+
+.events_table table
+{
+    border-collapse: separate;
+    border-spacing: 2px;
+    border-color: black;
+}
+
+.thead-inverse 
+{
+     color: #fff;
+     background-color: #373a3c;
+}
+
+.events_table table td:first-child
+{
+    font-weight: bold 
+}
+
+

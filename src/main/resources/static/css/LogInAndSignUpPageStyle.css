@@ -1,0 +1,20 @@
+body
+{
+   background-size: cover;
+}
+
+.form  
+{
+  position:absolute;
+  top:50%;
+  left:50%;
+  padding:15px;
+  --xPosition: -50%;
+  --yPosition: -60%;
+  -ms-transform: translateX(var(--xPosition)) translateY(var(--yPosition)); /*IE*/
+  -webkit-transform: translate(var(--xPosition),var(--yPosition)); /*Android, Chrome, iOS, Safari*/
+  -moz-transform: translate(var(--xPosition),var(--yPosition)); /*Firefox*/
+  -o-transform: translate(var(--xPosition),var(--yPosition)); /*Opera*/
+  transform: translate(var(--xPosition),var(--yPosition));
+}
+

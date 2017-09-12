@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org/">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"></link>
+	<link rel="stylesheet" th:href="@{/css/LogInAndSignUpPageStyle.css}"></link>
+</head>
+<body background="/others/Fox.jpg">
+	<div class="form">
+		<div class="signInWrap">
+			<h1>Logowanie</h1>
+			<form method="post">
+			    <table>
+			        <tr>
+			            <td><label for="username">Login</label></td>
+			            <td>
+			                <input name="login_username" type="text"></input>
+			                <span th:text="${login_username_error}"></span>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="password">Hasło</label></td>
+			            <td>
+			                <input name="login_password" type="password"></input>
+			                <span th:text="${login_password_error}"></span>
+			            </td>
+			        </tr>
+			    </table>
+			    <button type="submit">Zaloguj</button>
+			</form>
+		</div>
+		
+		<div class="signUpWrap">
+			<h1>Rejestracja</h1>
+			<form method="post">
+			    <table>
+			        <tr>
+			            <td><label for="username">Login</label></td>
+			            <td>
+			                <input name="username" type="text"></input>
+			                <span th:text="${username_error}"></span>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="password">Hasło</label></td>
+			            <td>
+			                <input name="password" type="password"></input>
+			                <span th:text="${password_error}"></span>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="verify">Powtórz Hasło</label></td>
+			            <td>
+			                <input name="verify" type="password"></input>
+			                <span th:text="${verify_error}"></span>
+			            </td>
+			        </tr>
+			    </table>
+			    <button type="submit">Zarejestruj</button>
+			</form>
+		</div>
+	</div>
+	<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</body>
+</html>

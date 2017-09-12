@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.webapp.scheduler.SchedulerApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.901 sec - in org.webapp.scheduler.SchedulerApplicationTests

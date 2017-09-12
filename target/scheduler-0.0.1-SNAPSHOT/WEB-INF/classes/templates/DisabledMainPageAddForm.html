@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org/">
+<head>
+	<meta charset="UTF-8"/>
+	<link rel="stylesheet" th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}"></link>
+	<link rel="stylesheet" th:href="@{/css/DisabledMainPageAddFormStyle.css}"></link>
+</head>
+<body>
+	<div class="user_form">
+		<h1 th:text="'Witaj ' + ${user?.username} + ', dziś mamy '"></h1>
+		<p id="date"></p>
+		<form method="post">
+			<button type="submit">Wyloguj</button>
+		</form>	
+		
+		<div class="addForm">
+			<h1>Dodaj zdarzenie</h1>
+			    <table>
+			        <tr>
+			            <td><label for="title_label">Tytuł</label></td>
+			            <td>
+			                <input name="title" type="text"></input>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="description_label">Opis</label></td>
+			            <td>
+			            	​<textarea name="description" rows="5" cols="50"></textarea>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="datetime_label">Data i czas</label></td>
+			            <td>
+			                <input name="datetime" type="datetime-local"></input>
+			            </td>
+			        </tr>
+			    </table>
+			    <button type="submit">Dodaj</button>
+		</div>
+		<div class="modifyForm">
+			<h1>Modyfikuj zdarzenie</h1>
+			<form method="post" th:action="@{/modify_event}">
+			    <table>
+			    	<tr>
+			            <td><label for="id_label">Nr</label></td>
+			            <td>
+			                <input name="id" type="text" th:value="${table_id}" disabled></input>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="title_label">Tytuł</label></td>
+			            <td>
+			                <input name="title" type="text" th:value="${event.title}"></input>
+			                <span th:errors="${event.title}" class="error"></span>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="description_label">Opis</label></td>
+			            <td>
+			            	​<textarea name="description" rows="5" cols="50" th:placeholder="${event.description}"></textarea>
+			            </td>
+			        </tr>
+			        <tr>
+			            <td><label for="datetime_label">Data i czas</label></td>
+			            <td>
+			                 <input name="datetime" type="datetime-local" th:value="${event.datetime}"></input>
+			                 <span th:errors="${event.datetime}" class="error"></span>
+			            </td>
+			        </tr>
+			    </table>
+			    <input type="hidden" name="table_id" th:value="${table_id}"/></input>   
+		        <input type="hidden" name="uid" th:value="${event.uid}"/></input>
+			    <button type="submit">Modyfikuj</button>
+			 </form>
+			 <form method="post" th:action="@{/cancel}">
+				<button type="submit">Anuluj</button>
+			</form>
+		</div>
+	</div>
+	
+	<div class="events_table">
+	<table class="table table-bordered">
+	<thead class="thead-inverse">
+	    <tr>
+	      <th>Nr</th>
+	      <th>Tytuł</th>
+	      <th>Opis</th>
+	      <th>Data i czas</th>
+	    </tr>
+  	</thead>
+		<tbody>
+			<tr th:each="event, eventStat : ${listOfEvents}"> 
+				<td th:text="${eventStat.count}"></td>
+				<td th:text="${event.title}"></td>
+				<td th:text="${event.description}"></td>
+				<td th:text="${#strings.replace(event.datetime,'T',' ')}"></td>
+				<td>
+		           <form th:action="@{/delete_event}" method="post">
+		         	  <input type="hidden" name="uid" th:value="${event.uid}"/></input>
+		              <button type="submit" value="Submit" class="btn btn-danger">Usuń</button>
+		           </form>
+		       </td>
+		       <td>
+		           <form th:action="@{/fill_event}" method="post"> 
+		          	  <input type="hidden" name="table_id" th:value="${eventStat.count}"/></input>   
+		         	  <input type="hidden" name="uid" th:value="${event.uid}"/></input>
+		         	  <input type="hidden" name="title" th:value="${event.title}" /></input>
+		         	  <input type="hidden" name="description" th:value="${event.description}" /></input>
+		         	  <input type="hidden" name="datetime" th:value="${event.datetime}" /></input>
+		              <button type="submit" value="Submit" class="btn btn-primary">Modyfikuj</button> 
+		           </form>
+		       </td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	
+	<script th:src="@{/js/DateTimeForm.js}" type="text/javascript"></script> 
+	<script th:src="@{/webjars/jquery/3.1.1/jquery.min.js}"></script>
+	<script th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script> 
+</body>
+</html>

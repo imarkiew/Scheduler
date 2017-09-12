@@ -1,0 +1,11 @@
+C:\scheduler\src\main\java\org\webapp\controllers\LogInAndSignUpController.java
+C:\scheduler\src\main\java\org\webapp\dao\UserDao.java
+C:\scheduler\src\main\java\org\webapp\dao\EventDao.java
+C:\scheduler\src\main\java\org\webapp\controllers\AbstractController.java
+C:\scheduler\src\main\java\org\webapp\WebAppConfig.java
+C:\scheduler\src\main\java\org\webapp\models\Event.java
+C:\scheduler\src\main\java\org\webapp\models\AbstractEntity.java
+C:\scheduler\src\main\java\org\webapp\models\User.java
+C:\scheduler\src\main\java\org\webapp\controllers\MainPageController.java
+C:\scheduler\src\main\java\org\webapp\SchedulerApplication.java
+C:\scheduler\src\main\java\org\webapp\AuthenticationInterceptor.java
