@@ -1,5 +1,4 @@
 # scheduler
-Prosty program mający za zadanie umożliwić zakładanie kont, logowania oraz harmonogramowanie wydarzeń (automatyczne, rosnące sorotwanie 
-według daty i czasu) z mozliwością dodawania, usuwania i modyfikacji. Program został napisany przy użyciu framework Spring Boot oraz 
-technologii z nim powiazanych. Do przetrzymywania relacji została wybrana wbudowana baza danych H2.
-W celu zalogowania lub założenia konta, należy się po uruchomieniu programu udać pod adres localhost:8080/login
+A simple program designed to enable account creation, logging in and event scheduling (automatic sorting by time and date in ascending order) with the ability to add, delete and modify. The program was written using the framework Spring Boot and
+technologies associated with it. The built-in database H2 has been chosen to hold the relationship.
+In order to log in or create an account, you should go to the address localhost:8080/login after starting the program.
